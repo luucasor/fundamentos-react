@@ -11,6 +11,7 @@ import Aleatorio from './components/basicos/Aleatorio'
 import Fragmento from './components/basicos/Fragmento'
 import ComParametro from './components/basicos/ComParametro'
 import Primeiro from './components/basicos/Primeiro'
+import UsuarioInfo from "./components/condicional/UsuarioInfo"
 
 // eslint-disable-next-line
 export default () => (
@@ -20,6 +21,9 @@ export default () => (
         <div className="Cards">
             <Card titulo="#08 - Renderização Condicional" color="#982395">
                 <ParOuImpar numero={3}/>
+                <UsuarioInfo usuario={{ nome: 'Fernando' }}/>
+                <UsuarioInfo usuario={{ email: 'fer@nando.com' }}/>
+                <UsuarioInfo/>
             </Card>
 
             <Card titulo="#07 - Repetição (desafio)" color="#FF4C10">
