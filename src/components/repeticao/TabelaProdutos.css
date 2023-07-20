@@ -1,10 +1,16 @@
-.table {
+.TabelaProdutos table {
+    width: 100%;
 }
 
-.table table, th, td {
-    border: 1px solid black;
+.TabelaProdutos thead tr, th {
+    color: #e7dcdc;
+    background-color: #808080;
 }
 
-.thead tr, th {
-    color: green;
+.TabelaProdutos .Par {
+    background-color: #b5dce8;
+}
+
+.TabelaProdutos .Impar {
+    background-color: #e7f0f8;
 }

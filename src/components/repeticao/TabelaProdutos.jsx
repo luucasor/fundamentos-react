@@ -1,10 +1,10 @@
-import styles from "./TabelaProdutos.css"
+import "./TabelaProdutos.css"
 import produtos from "../../data/produtos"
 
 export default function TabelaProdutos(props) {
     function renderizaCabecalho() {
         return (
-            <thead style={styles.thead}>
+            <thead>
                 <tr>
                     <th>Id</th>
                     <th>Nome</th>
@@ -18,12 +18,12 @@ export default function TabelaProdutos(props) {
         return (
             <tbody>
                 {
-                    produtos.map((produto) => {
+                    produtos.map((produto, i) => {
                         return (
-                            <tr key={produto.id}>
+                            <tr key={produto.id} className={i % 2 == 0 ? 'Par' : 'Impar'}>
                                 <td>{ produto.id }</td>
                                 <td>{ produto.nome }</td>
-                                <td>{ produto.preco }</td>
+                                <td>R$ { produto.preco.toFixed(2).replace('.', ',') }</td>
                             </tr>
                         )
                     })
@@ -32,8 +32,8 @@ export default function TabelaProdutos(props) {
         )
     }
     return (
-        <div>
-            <table style={styles.table}>
+        <div className="TabelaProdutos">
+            <table>
                 { renderizaCabecalho() }
                 { renderizaCorpo() }
             </table>
