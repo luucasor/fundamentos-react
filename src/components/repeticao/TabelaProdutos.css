@@ -1,0 +1,10 @@
+.table {
+}
+
+.table table, th, td {
+    border: 1px solid black;
+}
+
+.thead tr, th {
+    color: green;
+}
