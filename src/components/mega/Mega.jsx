@@ -1,11 +1,14 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import "./Mega.css"
 import Botoes from "../contador/Botoes"
 
-export default (props) => {
+export default () => {
     const [qtdNumeros, setQtdNumeros] = useState(6)
     const min = 6
     const max = 15
+
+    const styledMax = qtdNumeros == max ? <span style={{color: 'red'}}>{max}</span> : max
+    const styledMin = qtdNumeros == min ? <span style={{color: 'red'}}>{min}</span> : min
 
     function renderizaNumeros() {
         const numeros = gerarNumeros(qtdNumeros)
@@ -29,7 +32,12 @@ export default (props) => {
     }    
 
     function renderizaMarcador() {
-        return <h1>{qtdNumeros}</h1>
+        return (
+            <div style={{display: "block"}}>
+                <h2>Quantidade de números</h2>
+                <h2>{qtdNumeros}</h2>
+            </div>
+        )
     }
 
     function getRandomArbitrary() {
@@ -54,7 +62,7 @@ export default (props) => {
             {renderizaMarcador()}
             <Botoes setInc={inc} setDec={dec}/>
             {renderizaNumeros()}
-            <p>Limites min: {min} max: {max} números</p>
+            <p>Limites min: {styledMin} max: {styledMax}  números</p>
         </div>
     )
 }
