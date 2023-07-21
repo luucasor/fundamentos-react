@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "./Input.css"
 
-export default function Input(props) {
+export default (props) => {
     const [valor, setValor] = useState('Inicial')
 
     function quandoMudar(e) {
