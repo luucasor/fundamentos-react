@@ -13,6 +13,7 @@ import ComParametro from './components/basicos/ComParametro'
 import Primeiro from './components/basicos/Primeiro'
 import UsuarioInfo from "./components/condicional/UsuarioInfo"
 import DiretaPai from "./components/comunicacao/DiretaPai"
+import IndiretaPai from "./components/comunicacao/IndiretaPai"
 
 // eslint-disable-next-line
 export default () => (
@@ -20,6 +21,10 @@ export default () => (
         <h1>Fundamento React (Arrow)</h1>
         
         <div className="Cards">
+            <Card titulo="#10 - Comunicação Indireta" color="#10323C">
+                <IndiretaPai />
+            </Card>
+
             <Card titulo="#09 - Comunicação Direta" color="#59323C">
                 <DiretaPai />
             </Card>
