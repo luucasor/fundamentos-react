@@ -48,13 +48,12 @@ export default function Mega() {
     }
     
     function gerarNumeros(qtdNumeros) {
-        const numeros = []
-        while (numeros.length < qtdNumeros){
-            let numero = getRandomArbitrary()
-            if(!numeros.includes(numero)){
-                numeros.push(numero)
-            }
-        }
+        const numeros = Array(qtdNumeros)
+        .fill(0)
+        .reduce((nums) => {
+            const novoNumero = getRandomArbitrary()
+            return [ ...nums, novoNumero ]
+        }, [])
         return numeros.sort((a, b) => { return a - b})
     }
       
