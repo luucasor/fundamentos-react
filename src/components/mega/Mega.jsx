@@ -54,7 +54,7 @@ export default function Mega() {
             const novoNumero = getRandomArbitrary()
             return [ ...nums, novoNumero ]
         }, [])
-        return numeros.sort((a, b) => { return a - b})
+        return numeros.sort((a, b) => a - b)
     }
       
     return (
