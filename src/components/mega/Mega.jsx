@@ -1,14 +1,15 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import "./Mega.css"
 import Botoes from "../contador/Botoes"
 
-export default () => {
+export default function Mega() {
     const [qtdNumeros, setQtdNumeros] = useState(6)
     const min = 6
     const max = 15
 
-    const styledMax = qtdNumeros == max ? <span style={{color: 'red'}}>{max}</span> : max
-    const styledMin = qtdNumeros == min ? <span style={{color: 'red'}}>{min}</span> : min
+    function styled(value) {
+        return qtdNumeros === value ? <span style={{color: 'red'}}>{value}</span> : value
+    }
 
     function renderizaNumeros() {
         const numeros = gerarNumeros(qtdNumeros)
@@ -62,7 +63,7 @@ export default () => {
             {renderizaMarcador()}
             <Botoes setInc={inc} setDec={dec}/>
             {renderizaNumeros()}
-            <p>Limites min: {styledMin} max: {styledMax}  números</p>
+            <p>Limites min: {styled(min)} max: {styled(max)}  números</p>
         </div>
     )
 }
